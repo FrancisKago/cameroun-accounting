@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Extension du formulaire partenaire -->
+    <record id="view_partner_form_cameroon" model="ir.ui.view">
+        <field name="name">res.partner.form.cameroon</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Informations Fiscales Cameroun" attrs="{'invisible': [('country_id', '!=', %(base.cm)d)]}">
+                    <group>
+                        <group string="Identification Fiscale">
+                            <field name="taxpayer_identifier"/>
+                            <field name="commerce_registry"/>
+                            <field name="tax_regime"/>
+                            <field name="activity_sector"/>
+                        </group>
+                        <group string="Informations Complémentaires">
+                            <field name="region_cm"/>
+                            <field name="annual_turnover"/>
+                            <field name="vat_threshold_exceeded"/>
+                            <field name="is_tax_exempt"/>
+                        </group>
+                    </group>
+                    <group string="Mobile Money" attrs="{'invisible': [('mobile_money_operator', '=', False)]}">
+                        <field name="mobile_money_operator"/>
+                        <field name="mobile_money_number"/>
+                    </group>
+                    <group string="Exonération Fiscale" attrs="{'invisible': [('is_tax_exempt', '=', False)]}">
+                        <field name="tax_exemption_reason" nolabel="1"/>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+</odoo>

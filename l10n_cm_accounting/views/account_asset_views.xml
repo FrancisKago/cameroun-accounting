@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_account_asset_form_cameroon" model="ir.ui.view">
+        <field name="name">account.asset.form.cameroon</field>
+        <field name="model">account.asset</field>
+        <field name="inherit_id" ref="account_asset.view_account_asset_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Informations Cameroun">
+                    <group>
+                        <group string="Identification">
+                            <field name="asset_number"/>
+                            <field name="acquisition_mode"/>
+                            <field name="supplier_id"/>
+                            <field name="purchase_date"/>
+                        </group>
+                        <group string="SYSCOHADA">
+                            <field name="syscohada_category"/>
+                            <field name="cameroon_depreciation_method"/>
+                            <field name="tax_depreciation_rate"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Localisation">
+                            <field name="location"/>
+                            <field name="responsible_id"/>
+                        </group>
+                        <group string="Garantie et Maintenance">
+                            <field name="warranty_start_date"/>
+                            <field name="warranty_end_date"/>
+                            <field name="insurance_policy"/>
+                            <field name="maintenance_contract"/>
+                        </group>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+</odoo>

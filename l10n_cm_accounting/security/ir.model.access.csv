@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_move_import_manager,account.move.import manager,model_account_move_import,account.group_account_manager,1,1,1,1
+access_account_move_import_user,account.move.import user,model_account_move_import,account.group_account_user,1,1,1,0
+access_account_budget_manager,account.budget manager,model_account_budget,account.group_account_manager,1,1,1,1
+access_account_budget_user,account.budget user,model_account_budget,account.group_account_user,1,0,0,0
+access_account_budget_line_manager,account.budget.line manager,model_account_budget_line,account.group_account_manager,1,1,1,1
+access_account_budget_line_user,account.budget.line user,model_account_budget_line,account.group_account_user,1,0,0,0
+access_tax_reminder_manager,tax.reminder manager,model_tax_reminder,account.group_account_manager,1,1,1,1
+access_tax_reminder_user,tax.reminder user,model_tax_reminder,account.group_account_user,1,0,0,0
+access_fiscal_declaration_wizard_manager,fiscal.declaration.wizard manager,model_fiscal_declaration_wizard,account.group_account_manager,1,1,1,1
+access_fiscal_declaration_wizard_user,fiscal.declaration.wizard user,model_fiscal_declaration_wizard,account.group_account_user,1,1,1,0
+access_cash_transfer_wizard_manager,cash.transfer.wizard manager,model_cash_transfer_wizard,account.group_account_manager,1,1,1,1
+access_cash_transfer_wizard_user,cash.transfer.wizard user,model_cash_transfer_wizard,account.group_account_user,1,1,1,0

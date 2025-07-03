@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_fiscal_declaration_wizard_form" model="ir.ui.view">
+        <field name="name">fiscal.declaration.wizard.form</field>
+        <field name="model">fiscal.declaration.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Assistant de Déclarations Fiscales">
+                <header>
+                    <button name="action_compute_declaration" type="object" string="Calculer" states="draft" class="btn-primary"/>
+                    <button name="action_generate_pdf" type="object" string="Générer PDF" states="computed" class="btn-primary"/>
+                    <button name="action_submit_declaration" type="object" string="Soumettre" states="generated"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="declaration_type"/>
+                            <field name="company_id"/>
+                        </group>
+                        <group>
+                            <field name="fiscal_year"/>
+                            <field name="period_type"/>
+                            <field name="period_month" attrs="{'invisible': [('period_type', '!=', 'monthly')], 'required': [('period_type', '=', 'monthly')]}"/>
+                            <field name="period_quarter" attrs="{'invisible': [('period_type', '!=', 'quarterly')], 'required': [('period_type', '=', 'quarterly')]}"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                    </group>
+
+                    <notebook attrs="{'invisible': [('state', '=', 'draft')]}">
+                        <page string="Résultats">
+                            <group>
+                                <group string="Montants Calculés">
+                                    <field name="total_sales"/>
+                                    <field name="total_purchases"/>
+                                    <field name="vat_collected"/>
+                                    <field name="vat_paid"/>
+                                    <field name="vat_due"/>
+                                </group>
+                                <group string="Impôts">
+                                    <field name="withholding_tax"/>
+                                    <field name="corporate_tax"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Fichier PDF" attrs="{'invisible': [('pdf_file', '=', False)]}">
+                            <field name="pdf_file" filename="pdf_filename"/>
+                            <field name="pdf_filename" invisible="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_fiscal_declaration_wizard" model="ir.actions.act_window">
+        <field name="name">Déclarations Fiscales</field>
+        <field name="res_model">fiscal.declaration.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_fiscal_declarations"
+              name="Déclarations Fiscales"
+              parent="account.menu_finance_reports"
+              action="action_fiscal_declaration_wizard"
+              sequence="10"/>
+
+</odoo>

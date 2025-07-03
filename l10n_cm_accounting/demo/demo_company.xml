@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Société de démonstration camerounaise -->
+        <record id="demo_company_cm" model="res.company">
+            <field name="name">SABC Démonstration</field>
+            <field name="street">Avenue du 20 Mai</field>
+            <field name="city">Douala</field>
+            <field name="zip">BP 1234</field>
+            <field name="country_id" ref="base.cm"/>
+            <field name="currency_id" ref="base.XAF"/>
+            <field name="email">demo@sabc-cm.com</field>
+            <field name="phone">+237 233 12 34 56</field>
+            <field name="website">https://www.sabc-demo.cm</field>
+        </record>
+
+        <!-- Partenaires de démonstration -->
+        <record id="demo_partner_client_cm" model="res.partner">
+            <field name="name">ENEO Cameroun SA</field>
+            <field name="is_company" eval="True"/>
+            <field name="customer_rank">1</field>
+            <field name="street">Boulevard de la Liberté</field>
+            <field name="city">Yaoundé</field>
+            <field name="country_id" ref="base.cm"/>
+            <field name="taxpayer_identifier">P123456789A</field>
+            <field name="tax_regime">reel_normal</field>
+            <field name="activity_sector">energy</field>
+            <field name="annual_turnover">50000000000</field>
+        </record>
+
+        <record id="demo_partner_supplier_cm" model="res.partner">
+            <field name="name">Brasseries du Cameroun</field>
+            <field name="is_company" eval="True"/>
+            <field name="supplier_rank">1</field>
+            <field name="street">Zone Industrielle</field>
+            <field name="city">Douala</field>
+            <field name="country_id" ref="base.cm"/>
+            <field name="taxpayer_identifier">P987654321B</field>
+            <field name="tax_regime">reel_normal</field>
+            <field name="activity_sector">manufacturing</field>
+            <field name="mobile_money_operator">orange</field>
+            <field name="mobile_money_number">+237 655 12 34 56</field>
+        </record>
+
+    </data>
+</odoo>

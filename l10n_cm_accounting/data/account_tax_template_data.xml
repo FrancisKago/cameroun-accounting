@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- TVA Cameroun 19.25% -->
+        <record id="tax_vat_1925_cm" model="account.tax.template">
+            <field name="chart_template_id" ref="chart_template_cm"/>
+            <field name="name">TVA 19,25% (Cameroun)</field>
+            <field name="amount">19.25</field>
+            <field name="amount_type">percent</field>
+            <field name="type_tax_use">sale</field>
+            <field name="description">TVA19</field>
+        </record>
+
+        <record id="tax_vat_1925_purchase_cm" model="account.tax.template">
+            <field name="chart_template_id" ref="chart_template_cm"/>
+            <field name="name">TVA 19,25% à l'achat (Cameroun)</field>
+            <field name="amount">19.25</field>
+            <field name="amount_type">percent</field>
+            <field name="type_tax_use">purchase</field>
+            <field name="description">TVA19ACH</field>
+        </record>
+
+        <!-- TVA Réduite 5,5% -->
+        <record id="tax_vat_55_cm" model="account.tax.template">
+            <field name="chart_template_id" ref="chart_template_cm"/>
+            <field name="name">TVA 5,5% (Cameroun)</field>
+            <field name="amount">5.5</field>
+            <field name="amount_type">percent</field>
+            <field name="type_tax_use">sale</field>
+            <field name="description">TVA5.5</field>
+        </record>
+
+        <!-- Retenue à la source 5,5% -->
+        <record id="tax_withholding_55_cm" model="account.tax.template">
+            <field name="chart_template_id" ref="chart_template_cm"/>
+            <field name="name">Retenue à la source 5,5%</field>
+            <field name="amount">5.5</field>
+            <field name="amount_type">percent</field>
+            <field name="type_tax_use">purchase</field>
+            <field name="description">RAS5.5</field>
+        </record>
+
+        <!-- Retenue à la source 11% -->
+        <record id="tax_withholding_11_cm" model="account.tax.template">
+            <field name="chart_template_id" ref="chart_template_cm"/>
+            <field name="name">Retenue à la source 11%</field>
+            <field name="amount">11.0</field>
+            <field name="amount_type">percent</field>
+            <field name="type_tax_use">purchase</field>
+            <field name="description">RAS11</field>
+        </record>
+
+        <!-- Taxe d'Apprentissage 1% -->
+        <record id="tax_apprenticeship_1_cm" model="account.tax.template">
+            <field name="chart_template_id" ref="chart_template_cm"/>
+            <field name="name">Taxe d'Apprentissage 1%</field>
+            <field name="amount">1.0</field>
+            <field name="amount_type">percent</field>
+            <field name="type_tax_use">purchase</field>
+            <field name="description">TAP1</field>
+        </record>
+
+        <!-- Centimes Communaux 10% -->
+        <record id="tax_municipal_10_cm" model="account.tax.template">
+            <field name="chart_template_id" ref="chart_template_cm"/>
+            <field name="name">Centimes Communaux 10%</field>
+            <field name="amount">10.0</field>
+            <field name="amount_type">percent</field>
+            <field name="type_tax_use">purchase</field>
+            <field name="description">CC10</field>
+        </record>
+
+    </data>
+</odoo>

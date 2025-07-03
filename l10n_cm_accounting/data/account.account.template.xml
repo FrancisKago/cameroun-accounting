@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- CLASSE 1 - COMPTES DE RESSOURCES DURABLES -->
+
+        <!-- 10 - CAPITAL -->
+        <record id="syscohada_account_10" model="account.account.template">
+            <field name="code">10</field>
+            <field name="name">CAPITAL</field>
+            <field name="user_type_id" ref="account_type_cm_equity"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <record id="syscohada_account_101" model="account.account.template">
+            <field name="code">101</field>
+            <field name="name">CAPITAL SOCIAL</field>
+            <field name="user_type_id" ref="account_type_cm_equity"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <record id="syscohada_account_101000" model="account.account.template">
+            <field name="code">101000</field>
+            <field name="name">Capital souscrit, appelé, versé</field>
+            <field name="user_type_id" ref="account_type_cm_equity"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <!-- 11 - RESERVES -->
+        <record id="syscohada_account_11" model="account.account.template">
+            <field name="code">11</field>
+            <field name="name">RESERVES</field>
+            <field name="user_type_id" ref="account_type_cm_equity"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <record id="syscohada_account_111" model="account.account.template">
+            <field name="code">111</field>
+            <field name="name">RESERVE LEGALE</field>
+            <field name="user_type_id" ref="account_type_cm_equity"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <record id="syscohada_account_111000" model="account.account.template">
+            <field name="code">111000</field>
+            <field name="name">Réserve légale</field>
+            <field name="user_type_id" ref="account_type_cm_equity"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <!-- 12 - REPORT A NOUVEAU -->
+        <record id="syscohada_account_12" model="account.account.template">
+            <field name="code">12</field>
+            <field name="name">REPORT A NOUVEAU</field>
+            <field name="user_type_id" ref="account_type_cm_equity"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <record id="syscohada_account_121000" model="account.account.template">
+            <field name="code">121000</field>
+            <field name="name">Report à nouveau créditeur</field>
+            <field name="user_type_id" ref="account_type_cm_equity"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <!-- 13 - RESULTAT NET DE L'EXERCICE -->
+        <record id="syscohada_account_13" model="account.account.template">
+            <field name="code">13</field>
+            <field name="name">RESULTAT NET DE L'EXERCICE</field>
+            <field name="user_type_id" ref="account_type_cm_equity"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <record id="syscohada_account_131000" model="account.account.template">
+            <field name="code">131000</field>
+            <field name="name">Résultat net : bénéfice</field>
+            <field name="user_type_id" ref="account_type_cm_equity"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <!-- CLASSE 2 - COMPTES D'ACTIF IMMOBILISE -->
+
+        <!-- 21 - IMMOBILISATIONS INCORPORELLES -->
+        <record id="syscohada_account_21" model="account.account.template">
+            <field name="code">21</field>
+            <field name="name">IMMOBILISATIONS INCORPORELLES</field>
+            <field name="user_type_id" ref="account_type_cm_asset"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <record id="syscohada_account_211000" model="account.account.template">
+            <field name="code">211000</field>
+            <field name="name">Frais de recherche et de développement</field>
+            <field name="user_type_id" ref="account_type_cm_asset"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <!-- 22 - TERRAINS -->
+        <record id="syscohada_account_22" model="account.account.template">
+            <field name="code">22</field>
+            <field name="name">TERRAINS</field>
+            <field name="user_type_id" ref="account_type_cm_asset"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <record id="syscohada_account_221000" model="account.account.template">
+            <field name="code">221000</field>
+            <field name="name">Terrains agricoles et forestiers</field>
+            <field name="user_type_id" ref="account_type_cm_asset"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <!-- 23 - BATIMENTS, INSTALLATIONS TECHNIQUES -->
+        <record id="syscohada_account_23" model="account.account.template">
+            <field name="code">23</field>
+            <field name="name">BATIMENTS, INSTALLATIONS TECHNIQUES</field>
+            <field name="user_type_id" ref="account_type_cm_asset"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <record id="syscohada_account_231000" model="account.account.template">
+            <field name="code">231000</field>
+            <field name="name">Bâtiments industriels</field>
+            <field name="user_type_id" ref="account_type_cm_asset"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <!-- 24 - MATERIEL -->
+        <record id="syscohada_account_24" model="account.account.template">
+            <field name="code">24</field>
+            <field name="name">MATERIEL</field>
+            <field name="user_type_id" ref="account_type_cm_asset"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <record id="syscohada_account_241000" model="account.account.template">
+            <field name="code">241000</field>
+            <field name="name">Matériel et outillage industriel</field>
+            <field name="user_type_id" ref="account_type_cm_asset"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <!-- CLASSE 3 - COMPTES DE STOCKS -->
+
+        <!-- 31 - MARCHANDISES -->
+        <record id="syscohada_account_31" model="account.account.template">
+            <field name="code">31</field>
+            <field name="name">MARCHANDISES</field>
+            <field name="user_type_id" ref="account_type_cm_asset"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <record id="syscohada_account_311000" model="account.account.template">
+            <field name="code">311000</field>
+            <field name="name">Marchandises A</field>
+            <field name="user_type_id" ref="account_type_cm_asset"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <!-- CLASSE 4 - COMPTES DE TIERS -->
+
+        <!-- 41 - CLIENTS ET COMPTES RATTACHES -->
+        <record id="syscohada_account_41" model="account.account.template">
+            <field name="code">41</field>
+            <field name="name">CLIENTS ET COMPTES RATTACHES</field>
+            <field name="user_type_id" ref="account_type_cm_asset"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <record id="syscohada_account_411000" model="account.account.template">
+            <field name="code">411000</field>
+            <field name="name">Clients</field>
+            <field name="user_type_id" ref="account_type_cm_asset"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+            <field name="reconcile" eval="True"/>
+        </record>
+
+        <!-- 42 - FOURNISSEURS ET COMPTES RATTACHES -->
+        <record id="syscohada_account_42" model="account.account.template">
+            <field name="code">42</field>
+            <field name="name">FOURNISSEURS ET COMPTES RATTACHES</field>
+            <field name="user_type_id" ref="account_type_cm_liability"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <record id="syscohada_account_421000" model="account.account.template">
+            <field name="code">421000</field>
+            <field name="name">Fournisseurs</field>
+            <field name="user_type_id" ref="account_type_cm_liability"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+            <field name="reconcile" eval="True"/>
+        </record>
+
+        <!-- 43 - ETAT ET ORGANISMES INTERNATIONAUX -->
+        <record id="syscohada_account_43" model="account.account.template">
+            <field name="code">43</field>
+            <field name="name">ETAT ET ORGANISMES INTERNATIONAUX</field>
+            <field name="user_type_id" ref="account_type_cm_liability"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <!-- TVA collectée -->
+        <record id="syscohada_account_443" model="account.account.template">
+            <field name="code">443</field>
+            <field name="name">TVA FACTUREE</field>
+            <field name="user_type_id" ref="account_type_cm_liability"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <record id="syscohada_account_443000" model="account.account.template">
+            <field name="code">443000</field>
+            <field name="name">TVA collectée</field>
+            <field name="user_type_id" ref="account_type_cm_liability"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <!-- TVA déductible -->
+        <record id="syscohada_account_445" model="account.account.template">
+            <field name="code">445</field>
+            <field name="name">TVA RECUPERABLE</field>
+            <field name="user_type_id" ref="account_type_cm_asset"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <record id="syscohada_account_445000" model="account.account.template">
+            <field name="code">445000</field>
+            <field name="name">TVA déductible</field>
+            <field name="user_type_id" ref="account_type_cm_asset"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <!-- CLASSE 5 - COMPTES DE TRESORERIE -->
+
+        <!-- 52 - BANQUES -->
+        <record id="syscohada_account_52" model="account.account.template">
+            <field name="code">52</field>
+            <field name="name">BANQUES</field>
+            <field name="user_type_id" ref="account_type_cm_asset"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <record id="syscohada_account_521000" model="account.account.template">
+            <field name="code">521000</field>
+            <field name="name">Banques locales</field>
+            <field name="user_type_id" ref="account_type_cm_asset"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+            <field name="reconcile" eval="True"/>
+        </record>
+
+        <!-- 57 - CAISSES -->
+        <record id="syscohada_account_57" model="account.account.template">
+            <field name="code">57</field>
+            <field name="name">CAISSES</field>
+            <field name="user_type_id" ref="account_type_cm_asset"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <record id="syscohada_account_571000" model="account.account.template">
+            <field name="code">571000</field>
+            <field name="name">Caisse siège social</field>
+            <field name="user_type_id" ref="account_type_cm_asset"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <!-- 573 - MOBILE MONEY (spécifique Cameroun) -->
+        <record id="syscohada_account_573" model="account.account.template">
+            <field name="code">573</field>
+            <field name="name">MOBILE MONEY</field>
+            <field name="user_type_id" ref="account_type_cm_asset"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <record id="syscohada_account_573100" model="account.account.template">
+            <field name="code">573100</field>
+            <field name="name">Orange Money</field>
+            <field name="user_type_id" ref="account_type_cm_asset"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <record id="syscohada_account_573200" model="account.account.template">
+            <field name="code">573200</field>
+            <field name="name">MTN Mobile Money</field>
+            <field name="user_type_id" ref="account_type_cm_asset"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <!-- CLASSE 6 - COMPTES DE CHARGES -->
+
+        <!-- 60 - ACHATS -->
+        <record id="syscohada_account_60" model="account.account.template">
+            <field name="code">60</field>
+            <field name="name">ACHATS</field>
+            <field name="user_type_id" ref="account_type_cm_expense"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <record id="syscohada_account_601000" model="account.account.template">
+            <field name="code">601000</field>
+            <field name="name">Achats de marchandises</field>
+            <field name="user_type_id" ref="account_type_cm_expense"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <!-- 66 - CHARGES DE PERSONNEL -->
+        <record id="syscohada_account_66" model="account.account.template">
+            <field name="code">66</field>
+            <field name="name">CHARGES DE PERSONNEL</field>
+            <field name="user_type_id" ref="account_type_cm_expense"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <record id="syscohada_account_661000" model="account.account.template">
+            <field name="code">661000</field>
+            <field name="name">Salaires et appointements</field>
+            <field name="user_type_id" ref="account_type_cm_expense"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <!-- CLASSE 7 - COMPTES DE PRODUITS -->
+
+        <!-- 70 - VENTES -->
+        <record id="syscohada_account_70" model="account.account.template">
+            <field name="code">70</field>
+            <field name="name">VENTES</field>
+            <field name="user_type_id" ref="account_type_cm_income"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+        <record id="syscohada_account_701000" model="account.account.template">
+            <field name="code">701000</field>
+            <field name="name">Ventes de marchandises</field>
+            <field name="user_type_id" ref="account_type_cm_income"/>
+            <field name="chart_template_id" ref="chart_template_cm"/>
+        </record>
+
+    </data>
+</odoo>

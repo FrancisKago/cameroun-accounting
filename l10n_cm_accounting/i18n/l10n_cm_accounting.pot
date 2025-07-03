@@ -1,0 +1,25 @@
+# Translation template for l10n_cm_accounting
+# Extracted strings should be generated with odoo-bin --i18n-export, but here is a placeholder.
+msgid "Plafond de crédit dépassé"
+msgstr ""
+
+msgid "Le client dépasse son plafond de crédit. Vente refusée."
+msgstr ""
+
+msgid "Veuillez définir la valeur et la durée d'amortissement"
+msgstr ""
+
+msgid "Veuillez définir la date de première dotation d'amortissement"
+msgstr ""
+
+msgid "Tableau d'amortissement généré avec succès"
+msgstr ""
+
+msgid "Le numéro Mobile Money doit être un numéro camerounais valide (format: +237 XXXXXXXXX)"
+msgstr ""
+
+msgid "Le chiffre d'affaires ne peut pas être négatif"
+msgstr ""
+
+msgid "Le numéro de contribuable doit respecter le format: P + 9 chiffres + 1 lettre (ex: P123456789A)"
+msgstr ""

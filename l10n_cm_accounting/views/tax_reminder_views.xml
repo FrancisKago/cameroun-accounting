@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_tax_reminder_tree" model="ir.ui.view">
+        <field name="name">tax.reminder.tree</field>
+        <field name="model">tax.reminder</field>
+        <field name="arch" type="xml">
+            <tree string="Rappels Fiscaux">
+                <field name="name"/>
+                <field name="tax_type"/>
+                <field name="due_date"/>
+                <field name="state"/>
+                <field name="last_reminder_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_tax_reminder_form" model="ir.ui.view">
+        <field name="name">tax.reminder.form</field>
+        <field name="model">tax.reminder</field>
+        <field name="arch" type="xml">
+            <form string="Rappel Fiscal">
+                <header>
+                    <button name="action_mark_done" type="object" string="Marquer Terminé" states="sent"/>
+                    <button name="action_cancel" type="object" string="Annuler" states="pending,sent"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="tax_type"/>
+                        <field name="due_date"/>
+                        <field name="reminder_days"/>
+                        <field name="company_id"/>
+                        <field name="active"/>
+                        <field name="last_reminder_date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_tax_reminder" model="ir.actions.act_window">
+        <field name="name">Rappels Fiscaux</field>
+        <field name="res_model">tax.reminder</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_tax_reminders"
+              name="Rappels Fiscaux"
+              parent="account.menu_finance_configuration"
+              action="action_tax_reminder"
+              sequence="20"/>
+
+</odoo>

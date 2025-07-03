@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Formulaire d'importation d'écritures -->
+    <record id="view_account_move_import_form" model="ir.ui.view">
+        <field name="name">account.move.import.form</field>
+        <field name="model">account.move.import</field>
+        <field name="arch" type="xml">
+            <form string="Importation d'écritures comptables">
+                <header>
+                    <button name="action_download_template" type="object" string="Télécharger Template" class="btn-primary"/>
+                    <button name="action_preview_import" type="object" string="Aperçu" states="draft"/>
+                    <button name="action_import_moves" type="object" string="Importer" states="draft" class="btn-primary"/>
+                    <field name="import_state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="import_file" filename="filename"/>
+                        <field name="filename" invisible="1"/>
+                        <field name="journal_id"/>
+                    </group>
+                    <notebook>
+                        <page string="Résultats" attrs="{'invisible': [('import_state', '=', 'draft')]}">
+                            <group>
+                                <field name="success_count"/>
+                                <field name="error_count"/>
+                            </group>
+                            <field name="error_log" attrs="{'invisible': [('error_log', '=', False)]}" nolabel="1"/>
+                        </page>
+                        <page string="Aperçu" attrs="{'invisible': [('preview_data', '=', False)]}">
+                            <div class="o_field_html" t-field="preview_data"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action pour l'importation -->
+    <record id="action_account_move_import" model="ir.actions.act_window">
+        <field name="name">Importation d'écritures</field>
+        <field name="res_model">account.move.import</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- Menu -->
+    <menuitem id="menu_account_move_import"
+              name="Importation d'écritures"
+              parent="account.menu_finance_entries_management"
+              action="action_account_move_import"
+              sequence="50"/>
+
+</odoo>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Chart Template Cameroon SYSCOHADA -->
+        <record id="chart_template_cm" model="account.chart.template">
+            <field name="name">Cameroon - SYSCOHADA</field>
+            <field name="code_digits">6</field>
+            <field name="currency_id" ref="base.XAF"/>
+            <field name="country_id" ref="base.cm"/>
+        </record>
+
+        <!-- Root Account Types -->
+        <record id="account_type_cm_asset" model="account.account.type">
+            <field name="name">Actif SYSCOHADA</field>
+            <field name="type">asset</field>
+            <field name="internal_group">asset</field>
+        </record>
+
+        <record id="account_type_cm_liability" model="account.account.type">
+            <field name="name">Passif SYSCOHADA</field>
+            <field name="type">liability</field>
+            <field name="internal_group">liability</field>
+        </record>
+
+        <record id="account_type_cm_equity" model="account.account.type">
+            <field name="name">Capitaux Propres SYSCOHADA</field>
+            <field name="type">equity</field>
+            <field name="internal_group">equity</field>
+        </record>
+
+        <record id="account_type_cm_income" model="account.account.type">
+            <field name="name">Produits SYSCOHADA</field>
+            <field name="type">income</field>
+            <field name="internal_group">income</field>
+        </record>
+
+        <record id="account_type_cm_expense" model="account.account.type">
+            <field name="name">Charges SYSCOHADA</field>
+            <field name="type">expense</field>
+            <field name="internal_group">expense</field>
+        </record>
+
+    </data>
+</odoo>

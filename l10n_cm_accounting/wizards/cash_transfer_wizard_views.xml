@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_cash_transfer_wizard_form" model="ir.ui.view">
+        <field name="name">cash.transfer.wizard.form</field>
+        <field name="model">cash.transfer.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Transfert de Fonds">
+                <group>
+                    <field name="name"/>
+                    <field name="transfer_type"/>
+                    <field name="amount"/>
+                    <field name="transfer_date"/>
+                </group>
+                <group>
+                    <field name="source_journal_id"/>
+                    <field name="destination_journal_id"/>
+                </group>
+                <group string="Mobile Money" attrs="{'invisible': [('transfer_type', '!=', 'mobile_money')]}">
+                    <field name="mobile_money_operator"/>
+                    <field name="mobile_number"/>
+                    <field name="transaction_id"/>
+                </group>
+                <group>
+                    <field name="reference"/>
+                    <field name="memo"/>
+                </group>
+                <footer>
+                    <button name="action_transfer" type="object" string="Effectuer le Transfert" class="btn-primary"/>
+                    <button string="Annuler" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_cash_transfer_wizard" model="ir.actions.act_window">
+        <field name="name">Transfert de Fonds</field>
+        <field name="res_model">cash.transfer.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_cash_transfer"
+              name="Transfert de Fonds"
+              parent="account.menu_finance_entries_management"
+              action="action_cash_transfer_wizard"
+              sequence="60"/>
+
+</odoo>

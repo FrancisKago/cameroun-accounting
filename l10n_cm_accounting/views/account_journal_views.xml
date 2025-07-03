@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_account_journal_tree" model="ir.ui.view">
+        <field name="name">account.journal.tree</field>
+        <field name="model">account.journal</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="type"/>
+                <field name="company_id"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_account_journal_form" model="ir.ui.view">
+        <field name="name">account.journal.form</field>
+        <field name="model">account.journal</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="type"/>
+                        <field name="company_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <menuitem id="menu_account_journal_root" name="Journaux" parent="account.menu_finance" sequence="40"/>
+    <menuitem id="menu_account_journal" name="Journaux" parent="menu_account_journal_root" action="action_account_journal"/>
+    <record id="action_account_journal" model="ir.actions.act_window">
+        <field name="name">Journaux</field>
+        <field name="res_model">account.journal</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

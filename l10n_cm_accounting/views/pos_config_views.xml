@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_pos_config_form_cameroon" model="ir.ui.view">
+        <field name="name">pos.config.form.cameroon</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_config_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Configuration Cameroun">
+                    <group string="Mobile Money">
+                        <field name="enable_mobile_money"/>
+                        <field name="orange_money_account" attrs="{'invisible': [('enable_mobile_money', '=', False)]}"/>
+                        <field name="mtn_money_account" attrs="{'invisible': [('enable_mobile_money', '=', False)]}"/>
+                    </group>
+                    <group string="Taxes Cameroun">
+                        <field name="use_cameroon_taxes"/>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+</odoo>
