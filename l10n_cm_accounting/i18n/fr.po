@@ -1,0 +1,26 @@
+# French translations for l10n_cm_accounting
+# Generated from template
+msgid "Plafond de crédit dépassé"
+msgstr "Plafond de crédit dépassé"
+
+msgid "Le client dépasse son plafond de crédit. Vente refusée."
+msgstr "Le client dépasse son plafond de crédit. Vente refusée."
+
+msgid "Veuillez définir la valeur et la durée d'amortissement"
+msgstr "Veuillez définir la valeur et la durée d'amortissement"
+
+msgid "Veuillez définir la date de première dotation d'amortissement"
+msgstr "Veuillez définir la date de première dotation d'amortissement"
+
+msgid "Tableau d'amortissement généré avec succès"
+msgstr "Tableau d'amortissement généré avec succès"
+
+msgid "Le numéro Mobile Money doit être un numéro camerounais valide (format: +237 XXXXXXXXX)"
+msgstr "Le numéro Mobile Money doit être un numéro camerounais valide (format: +237 XXXXXXXXX)"
+
+msgid "Le chiffre d'affaires ne peut pas être négatif"
+msgstr "Le chiffre d'affaires ne peut pas être négatif"
+
+msgid "Le numéro de contribuable doit respecter le format: P + 9 chiffres + 1 lettre (ex: P123456789A)"
+msgstr "Le numéro de contribuable doit respecter le format : P + 9 chiffres + 1 lettre (ex: P123456789A)"
+
