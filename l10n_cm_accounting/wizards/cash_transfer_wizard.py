@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
 
+"""Wizard to register fund transfers."""
+
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError
 
 
 class CashTransferWizard(models.TransientModel):
     _name = 'cash.transfer.wizard'
+    """Assist users to move cash between accounts."""
     _description = 'Assistant de Transfert de Fonds'
 
     name = fields.Char(string='Référence', required=True, default='Transfert')

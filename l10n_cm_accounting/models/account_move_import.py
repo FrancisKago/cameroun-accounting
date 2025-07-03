@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+"""Wizard to import accounting moves from Excel."""
+
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError, ValidationError
 import pandas as pd
@@ -13,6 +15,7 @@ _logger = logging.getLogger(__name__)
 
 class AccountMoveImport(models.TransientModel):
     _name = 'account.move.import'
+    """Import wizard handling Excel files."""
     _description = "Assistant d'importation d'écritures comptables"
 
     name = fields.Char(string="Nom de l'importation", required=True, default=lambda self: "Import du " + datetime.today().strftime('%d/%m/%Y'))
@@ -314,3 +317,4 @@ class AccountMoveImport(models.TransientModel):
             'failed_imports': len(imports.filtered(lambda x: x.import_state == 'error')),
             'total_moves_created': sum(imports.mapped('success_count')),
         }
+

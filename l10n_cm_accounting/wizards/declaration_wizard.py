@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+"""Wizard generating Cameroon fiscal reports."""
+
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError
 from datetime import datetime, date, timedelta
@@ -11,6 +13,7 @@ _logger = logging.getLogger(__name__)
 
 class FiscalDeclarationWizard(models.TransientModel):
     _name = 'fiscal.declaration.wizard'
+    """Prepare and export fiscal declaration files."""
     _description = "Assistant de Déclarations Fiscales Camerounaises"
 
     name = fields.Char(string="Nom de la déclaration", required=True)
