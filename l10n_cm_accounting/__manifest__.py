@@ -50,7 +50,7 @@ Features:
         'data/account_tax_template_data.xml',
         # 'data/account_financial_report_data.xml',  # à fournir ou supprimer
         'data/tax_reminder_email_template.xml',
-        'report/report_stub.xml',
+        'report/account_reports.xml',
         'data/ir_cron_data.xml',
 
         # Views

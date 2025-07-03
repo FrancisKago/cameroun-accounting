@@ -1,0 +1,11 @@
+*.pyc
+__pycache__/
+.odoo/
+*.log
+pytest_cache/
+# Odoo addons
+*.egg-info/
+.idea/
+.vscode/
+.env
+

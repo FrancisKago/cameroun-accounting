@@ -41,3 +41,4 @@ class TestFiscalDeclarations(TransactionCase):
         if wizard.total_sales > 0:
             expected_dipe = wizard.total_sales * 0.022
             self.assertEqual(wizard.corporate_tax, expected_dipe, "Le calcul DIPE doit être correct")
+

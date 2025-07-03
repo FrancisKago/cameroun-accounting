@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+"""Asset enhancements for Cameroon localization."""
+
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError, ValidationError
 from datetime import datetime, date
@@ -10,6 +12,7 @@ _logger = logging.getLogger(__name__)
 
 class AccountAsset(models.Model):
     _inherit = "account.asset"
+    """Extend account.asset with Cameroon specific fields."""
 
     asset_number = fields.Char(
         string="Numéro d'immobilisation",
@@ -167,3 +170,4 @@ class AccountAsset(models.Model):
                 "type": "success",
             }
         }
+

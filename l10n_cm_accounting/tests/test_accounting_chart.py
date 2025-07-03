@@ -39,3 +39,4 @@ class TestAccountingChart(TransactionCase):
 
         mtn_account = self.env['account.account'].search([('code', '=', '573200')])
         self.assertTrue(mtn_account, "Le compte MTN Mobile Money doit exister")
+

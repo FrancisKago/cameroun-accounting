@@ -28,3 +28,4 @@ class TestAccountingBasic(TransactionCase):
             'filename': 'test.xlsx',
         })
         self.assertTrue(wizard)
+

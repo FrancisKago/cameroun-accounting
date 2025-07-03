@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+"""Automatic tax reminder models."""
+
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError
 from datetime import date, timedelta
@@ -10,6 +12,7 @@ _logger = logging.getLogger(__name__)
 
 class TaxReminder(models.Model):
     _name = 'tax.reminder'
+    """Store scheduled tax reminders."""
     _description = 'Rappel Fiscal Automatique'
     _order = 'due_date desc'
 
@@ -129,3 +132,4 @@ class TaxReminder(models.Model):
             created_reminders.append(reminder)
 
         return created_reminders
+
