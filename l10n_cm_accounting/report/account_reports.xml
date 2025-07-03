@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report id="report_dsf" model="fiscal.declaration.wizard" string="DSF" report_type="qweb-pdf" name="l10n_cm_accounting.report_dsf" file="l10n_cm_accounting.report_dsf"/>
+        <report id="report_dipe" model="fiscal.declaration.wizard" string="DIPE" report_type="qweb-pdf" name="l10n_cm_accounting.report_dipe" file="l10n_cm_accounting.report_dipe"/>
+        <report id="report_is" model="fiscal.declaration.wizard" string="IS" report_type="qweb-pdf" name="l10n_cm_accounting.report_is" file="l10n_cm_accounting.report_is"/>
+        <report id="report_vat_monthly" model="fiscal.declaration.wizard" string="TVA Mensuelle" report_type="qweb-pdf" name="l10n_cm_accounting.report_vat_monthly" file="l10n_cm_accounting.report_vat_monthly"/>
+        <report id="report_withholding_tax" model="fiscal.declaration.wizard" string="Retenues à la Source" report_type="qweb-pdf" name="l10n_cm_accounting.report_withholding_tax" file="l10n_cm_accounting.report_withholding_tax"/>
+        <!-- Basic templates for fiscal declarations -->
+        <template id="report_dsf" name="DSF Report">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h2>Déclaration Statistique et Fiscale</h2>
+                    <p t-esc="o.name"/>
+                </div>
+            </t>
+        </template>
+
+        <template id="report_dipe" name="DIPE Report">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h2>Déclaration d'Impôt Provisionnel des Entreprises</h2>
+                    <p t-esc="o.name"/>
+                </div>
+            </t>
+        </template>
+
+        <template id="report_is" name="IS Report">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h2>Impôt sur les Sociétés</h2>
+                    <p t-esc="o.name"/>
+                </div>
+            </t>
+        </template>
+
+        <template id="report_vat_monthly" name="VAT Monthly Report">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h2>Déclaration Mensuelle de TVA</h2>
+                    <p t-esc="o.name"/>
+                </div>
+            </t>
+        </template>
+
+        <template id="report_withholding_tax" name="Withholding Tax Report">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h2>Déclaration des Retenues à la Source</h2>
+                    <p t-esc="o.name"/>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>
+
+

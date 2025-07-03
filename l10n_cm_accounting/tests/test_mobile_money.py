@@ -55,3 +55,4 @@ class TestMobileMoney(TransactionCase):
         # Exécuter le transfert
         result = wizard.action_transfer()
         self.assertTrue(result, "Le transfert doit réussir")
+

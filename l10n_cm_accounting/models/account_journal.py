@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
 
+"""Journal extensions for Cameroon."""
+
 from odoo import models, fields, api
 
 
 class AccountJournal(models.Model):
     _inherit = 'account.journal'
+    """Add Cameroon-specific journal type."""
 
     # Journaux spécifiques camerounais
     cameroon_journal_type = fields.Selection([
