@@ -1,11 +1,15 @@
 # -*- coding: utf-8 -*-
 
+"""Budget models for Cameroon localization."""
+
 from odoo import models, fields, api, _
+
 from odoo.exceptions import UserError
 
 
 class AccountBudget(models.Model):
     _name = 'account.budget'
+    """Budget master record."""
     _description = 'Budget comptable camerounais'
     _order = 'fiscal_year desc, name'
 
@@ -48,6 +52,7 @@ class AccountBudget(models.Model):
 
 
 class AccountBudgetLine(models.Model):
+    """Individual budget line."""
     _name = 'account.budget.line'
     _description = 'Ligne budgétaire'
 
@@ -89,3 +94,4 @@ class AccountBudgetLine(models.Model):
                 line.variance_percent = (line.variance_amount / line.planned_amount) * 100
             else:
                 line.variance_percent = 0
+

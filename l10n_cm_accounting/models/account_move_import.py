@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+"""Wizard to import accounting moves from Excel."""
+
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError, ValidationError
 import pandas as pd
@@ -13,6 +15,7 @@ _logger = logging.getLogger(__name__)
 
 class AccountMoveImport(models.TransientModel):
     _name = 'account.move.import'
+    """Import wizard handling Excel files."""
     _description = "Assistant d'importation d'écritures comptables"
 
     name = fields.Char(string="Nom de l'importation", required=True, default=lambda self: "Import du " + datetime.today().strftime('%d/%m/%Y'))
@@ -287,20 +290,24 @@ class AccountMoveImport(models.TransientModel):
         ], limit=1)
 
     def _get_or_create_fiscal_year(self, move_date):
-        """Gestion directe des exercices fiscaux sans dépendance externe"""
-        # Implémentation simplifiée basée sur l'année civile
-        year = move_date.year
-
-        # Au Cameroun, l'exercice fiscal correspond généralement à l'année civile
-        fiscal_year_name = f"Exercice {year}"
-
-        # Pour la compatibilité, on peut stocker cette information dans res.company
+        """Retourne ou crée un cm.fiscal.year couvrant la date donnée."""
         company = self.env.company
-        if not hasattr(company, 'current_fiscal_year'):
-            # L'exercice fiscal est implicitement géré par Odoo via les périodes
-            pass
+        fiscal_year = self.env['cm.fiscal.year'].search([
+            ('company_id', '=', company.id),
+            ('date_start', '<=', move_date),
+            ('date_end', '>=', move_date),
+        ], limit=1)
 
-        return year
+        if not fiscal_year:
+            year = move_date.year
+            fiscal_year = self.env['cm.fiscal.year'].create({
+                'name': str(year),
+                'date_start': date(year, 1, 1),
+                'date_end': date(year, 12, 31),
+                'company_id': company.id,
+            })
+
+        return fiscal_year
 
     @api.model
     def get_import_statistics(self):
@@ -314,3 +321,4 @@ class AccountMoveImport(models.TransientModel):
             'failed_imports': len(imports.filtered(lambda x: x.import_state == 'error')),
             'total_moves_created': sum(imports.mapped('success_count')),
         }
+

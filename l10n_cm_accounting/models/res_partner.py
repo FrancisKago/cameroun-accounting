@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+"""Partner extensions for Cameroon."""
+
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 import re
@@ -7,6 +9,7 @@ import re
 
 class ResPartner(models.Model):
     _inherit = "res.partner"
+    """Add Cameroon-specific partner data."""
 
     # Informations fiscales camerounaises
     taxpayer_identifier = fields.Char(
@@ -213,3 +216,4 @@ class ResPartner(models.Model):
         }
 
         return configs.get(self.mobile_money_operator, {})
+
