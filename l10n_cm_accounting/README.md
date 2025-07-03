@@ -35,6 +35,7 @@ Module de localisation comptable pour le Cameroun, conforme aux normes SYSCOHADA
 - Rappels fiscaux automatiques
 - Transferts de fonds intégrés
 - Gestion budgétaire
+- Gestion manuelle des exercices fiscaux
 
 ## Installation
 

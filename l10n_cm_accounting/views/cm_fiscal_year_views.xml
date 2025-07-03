@@ -1,0 +1,49 @@
+<odoo>
+    <record id="view_cm_fiscal_year_tree" model="ir.ui.view">
+        <field name="name">cm.fiscal.year.tree</field>
+        <field name="model">cm.fiscal.year</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="state"/>
+                <field name="company_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_cm_fiscal_year_form" model="ir.ui.view">
+        <field name="name">cm.fiscal.year.form</field>
+        <field name="model">cm.fiscal.year</field>
+        <field name="arch" type="xml">
+            <form string="Exercice Fiscal">
+                <group>
+                    <field name="name"/>
+                    <field name="company_id"/>
+                </group>
+                <group>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                </group>
+                <group>
+                    <field name="state" readonly="1"/>
+                </group>
+                <footer>
+                    <button string="Cl\u00f4turer" type="object" name="action_close_fiscal_year"
+                            class="btn-primary" attrs="{'invisible': [('state', '=', 'closed')]}"/>
+                    <button string="Fermer" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_cm_fiscal_year" model="ir.actions.act_window">
+        <field name="name">Exercices Fiscaux</field>
+        <field name="res_model">cm.fiscal.year</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_cm_fiscal_year_root" name="Fiscalit\u00e9" parent="account.menu_finance" sequence="100"/>
+    <menuitem id="menu_cm_fiscal_year" name="Exercices Fiscaux" parent="menu_cm_fiscal_year_root" action="action_cm_fiscal_year"/>
+</odoo>

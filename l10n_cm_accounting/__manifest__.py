@@ -60,6 +60,7 @@ Features:
         'views/account_journal_views.xml',
         'views/res_partner_views.xml',
         'views/tax_reminder_views.xml',
+        'views/cm_fiscal_year_views.xml',
         'views/pos_config_views.xml',
 
         # Wizards
